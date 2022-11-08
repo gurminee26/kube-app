@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Service
 metadata:
-  name: vprodb
+  name: vprocache01
 spec:
   ports:
     - port: 3306
-      targetPort: vprodb-port
+      targetPort: vpromc-port
       protocol: TCP
   selector:
-    app: vprodb
+    app: vpromc
   type: ClusterIP
