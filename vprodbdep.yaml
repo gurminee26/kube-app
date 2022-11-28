@@ -16,7 +16,7 @@ spec:
       spec:
         containers:
           - name: vprodb
-            image: vprofile/vprofiledb:V1
+            image: vprofilegg/vprofiledb:V1
             args:
               - "--ignore-db-dir=lost+found"
             volumeMounts:
@@ -32,9 +32,9 @@ spec:
                     name: app-secret
                     key: db-pass
         nodeSelector:
-          zone: us-east-1b
+          zone: us-east-2a
         volumes:
           - name: vpro-db-data
             awsElasticBlockStore:
-              volumeID: vol-09cbad8d937a50192
+              volumeID: vol-037132c89f69a3b30
               fsType: ext4
